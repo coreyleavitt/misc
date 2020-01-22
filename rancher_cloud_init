@@ -1,0 +1,31 @@
+#cloud-config
+ssh_authorized_keys:
+  - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOtT0RNvJ/pzz/RGSOc5Fo9j7kiAQLijbSVHs/HVJhb4 corey@eos
+
+write_files:
+  - path: /cloud-config.yml
+    permissions: "0700"
+    owner: root
+    content: |
+      #cloud-config
+      ssh_authorized_keys:
+        - ssh-...
+
+      mounts:
+       - ["/dev/vdb1", "/mnt", "ext4", ""] 
+
+      rancher:
+        services:
+          rancher-server:
+            image: rancher/server:stable
+            ports:
+              - 8080:8080
+            restart: always
+            volumes:
+              - /mnt/rancher-server-mysql:/var/lib/mysql
+  - path: /opt/rancher/bin/start.sh
+    permissions: "0700"
+    owner: root
+    content: |
+      #!/bin/bash
+      echo y | ros install -f -c /cloud-config.yml -d /dev/vda
