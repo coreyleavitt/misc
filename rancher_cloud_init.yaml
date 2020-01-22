@@ -20,6 +20,7 @@ write_files:
             image: rancher/server:stable
             ports:
               - 8080:8080
+              - 443:80
             restart: always
             volumes:
               - /mnt/rancher-server-mysql:/var/lib/mysql
