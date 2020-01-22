@@ -9,7 +9,7 @@ write_files:
     content: |
       #cloud-config
       ssh_authorized_keys:
-        - ssh-...
+        - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOtT0RNvJ/pzz/RGSOc5Fo9j7kiAQLijbSVHs/HVJhb4 corey@eos
 
       mounts:
        - ["/dev/vdb1", "/mnt", "ext4", ""] 
