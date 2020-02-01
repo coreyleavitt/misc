@@ -2,18 +2,6 @@
 ssh_authorized_keys:
   - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOtT0RNvJ/pzz/RGSOc5Fo9j7kiAQLijbSVHs/HVJhb4
 
-write_files:
-  - path: /etc/Caddyfile
-    permissions: "0644"
-    owner: root
-    content: | 
-      rancher.knurl.io 
-      reverse_proxy rancher-server:443 {
-        lb_policy       random_choose 2
-        health_path     /ok
-        health_interval 10s
-      }
-
 rancher:
   system_docker:
     selinux_enabled: true
@@ -30,14 +18,6 @@ rancher:
       restart: always
       volumes:
         - /mnt/rancher-server-mysql:/var/lib/mysql
-#     proxy:
-#       image: abiosoft/caddy
-#       ports:
-#         - 443:443
-#       restart: always
-#       volumes:
-#         - /mnt/certs:/root/.caddy
-#         - /etc/Caddyfile:/etc/Caddyfile
 
 mounts:
   - ["/dev/vdb1", "/mnt", "ext4", ""] 
