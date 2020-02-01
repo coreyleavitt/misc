@@ -26,6 +26,7 @@ rancher:
         - ACME_DOMAIN=rancher.knurl.io
       ports:
         - 443:443
+        - 80:80
       restart: always
       volumes:
         - /mnt/rancher-server-mysql:/var/lib/mysql
