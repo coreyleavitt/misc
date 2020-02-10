@@ -1,0 +1,9 @@
+#cloud-config
+ssh_authorized_keys:
+  - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOtT0RNvJ/pzz/RGSOc5Fo9j7kiAQLijbSVHs/HVJhb4
+
+rancher:
+  system_docker:
+    selinux_enabled: true
+  docker:
+    selinux_enabled: true
