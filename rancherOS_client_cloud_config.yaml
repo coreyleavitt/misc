@@ -1,6 +1,7 @@
 #cloud-config
 ssh_authorized_keys:
   - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOtT0RNvJ/pzz/RGSOc5Fo9j7kiAQLijbSVHs/HVJhb4
+  - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDvAf0OirVPeI5WzQtpJ5K+6DRLBGwbDNBLLOWkhI/LK corey@24MLT146
 
 hostname: ros01
 rancher:
