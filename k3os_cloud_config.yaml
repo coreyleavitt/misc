@@ -2,7 +2,7 @@
 ssh_authorized_keys:
   - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOtT0RNvJ/pzz/RGSOc5Fo9j7kiAQLijbSVHs/HVJhb4
 
-hostname: kube02
+hostname: kube03
 
 k3os:
   modules:
