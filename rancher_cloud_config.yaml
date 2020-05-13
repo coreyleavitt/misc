@@ -10,8 +10,6 @@ rancher:
   services:
     rancher-server:
       image: rancher/rancher:stable
-      environment:
-        - ACME_DOMAIN=rancher.knurl.io
       ports:
         - 443:443
         - 80:80
